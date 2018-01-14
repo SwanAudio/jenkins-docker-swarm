@@ -16,7 +16,7 @@ FROM openjdk:alpine
 
 LABEL maintainer="evan@swanaudio.com"
 
-RUN apk add --no-cache docker
+RUN apk add --no-cache docker git
 
 RUN addgroup -S jenkins && adduser -S -g jenkins -G docker jenkins
 
