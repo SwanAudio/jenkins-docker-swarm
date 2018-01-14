@@ -1,5 +1,15 @@
-[![Docker Automated build](https://img.shields.io/docker/build/swanaudio/jenkins-swarm-slave.svg)](https://hub.docker.com/r/swanaudio/jenkins-swarm-slave/)
-[![GitHub Release Date](https://img.shields.io/github/release-date/swanaudio/jenkins-docker-swarm.svg)]()
+<p align='center'>
+  <a href='https://swanaudio.com'>
+    <img src='https://swanaudio.com/assets/swan-audio-logo-final-alt.svg' height='130' alt='Swan Audio'>
+  </a>
+</p>
+
+<p align='center'>
+  <a href='https://hub.docker.com/r/swanaudio/jenkins-swarm-slave'>
+    <img src='https://img.shields.io/docker/build/swanaudio/jenkins-swarm-slave.svg'>
+  </a>
+  <img src='https://img.shields.io/github/release-date/swanaudio/jenkins-docker-swarm.svg'>
+</p>
 
 A docker file for deploying jenkins swarm plugin agents, that have docker installed, to a docker swarm.
 
