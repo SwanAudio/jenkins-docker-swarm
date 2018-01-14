@@ -28,6 +28,9 @@ COPY --chown=jenkins:jenkins start-slave.sh /home/jenkins
 
 VOLUME /home/jenkins/workspace
 
+# The automatic host discovery feature of jenkins-swarm cannot currently
+# be used with docker-swarm w/ overlay networking, due to:
+# https://github.com/docker/libnetwork/issues/552
 EXPOSE 33848/udp
 
 ENTRYPOINT ["./start-slave.sh"]
