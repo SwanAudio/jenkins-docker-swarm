@@ -22,7 +22,7 @@ name jenkins-master must be used for the master server.
 Example compose file (should probably use nginx proxy to port 80 and
 better secret management for real usage):
 
-```
+```yml
 version: '3.5'
 services:
   jenkins-master:
@@ -64,4 +64,24 @@ secrets:
     file: jenkinspw
   jenkins-username:
     file: jenkinsuser
+```
+
+Gotchas
+-------
+
+The mounted docker.sock must have matching group ID in the container
+as in the image.
+
+The easiest (altho not super elegant) way to get around this is to add
+something similar to the following in your yml file.
+
+```yml
+jenkins-agent:
+    user: jenkins:${DOCKER_GID}
+```
+
+and than execute the following:
+
+```bash
+DOCKER_GID=`stat -c /var/run/docker.sock` docker stack deploy -c /path/to/stack.yml jenkins
 ```
