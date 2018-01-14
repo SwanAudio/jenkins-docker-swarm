@@ -1,4 +1,6 @@
-# jenkins-docker-swarm
+[![Docker Automated build](https://img.shields.io/docker/build/swanaudio/jenkins-swarm-slave.svg)](https://hub.docker.com/r/swanaudio/jenkins-swarm-slave/)
+[![GitHub Release Date](https://img.shields.io/github/release-date/swanaudio/jenkins-docker-swarm.svg)]()
+
 A docker file for deploying jenkins swarm plugin agents, that have docker installed, to a docker swarm.
 
 Usage
