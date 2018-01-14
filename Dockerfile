@@ -19,14 +19,21 @@ LABEL maintainer="evan@swanaudio.com"
 RUN apk add --no-cache docker
 
 RUN addgroup -S jenkins && adduser -S -g jenkins -G docker jenkins
-USER jenkins
 
 WORKDIR /home/jenkins
 
-COPY --from=0 --chown=jenkins:jenkins /swarm-client.jar .
-COPY --chown=jenkins:jenkins start-slave.sh /home/jenkins
+COPY --from=0 /swarm-client.jar .
+COPY start-slave.sh /home/jenkins
+
+# Workaround for https://github.com/moby/moby/issues/2259
+RUN mkdir -p /home/jenkins/workspace
+
+# Backport support for docker 17.06 (version used on docker hub)
+RUN chown -R jenkins:jenkins /home/jenkins
 
 VOLUME /home/jenkins/workspace
+
+USER jenkins
 
 # The automatic host discovery feature of jenkins-swarm cannot currently
 # be used with docker-swarm w/ overlay networking, due to:
