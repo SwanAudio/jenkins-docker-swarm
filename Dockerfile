@@ -16,7 +16,9 @@ FROM alpine:edge
 
 LABEL maintainer="evan@swanaudio.com"
 
-RUN apk add --no-cache docker git
+RUN apk add --no-cache docker git py-pip
+
+RUN pip install docker-compose
 
 # START: https://github.com/docker-library/openjdk/blob/2598f7123fce9ea870e67f8f9df745b2b49866c0/8-jre/alpine/Dockerfile
 ENV LANG C.UTF-8
@@ -33,8 +35,8 @@ RUN { \
 ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk/jre
 ENV PATH $PATH:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin
 
-ENV JAVA_VERSION 8u151
-ENV JAVA_ALPINE_VERSION 8.151.12-r0
+ENV JAVA_VERSION 8u181
+ENV JAVA_ALPINE_VERSION 8.181.13-r0
 
 RUN set -x \
 	&& apk add --no-cache \
