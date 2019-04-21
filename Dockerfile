@@ -16,7 +16,7 @@ FROM alpine:edge
 
 LABEL maintainer="evan@swanaudio.com"
 
-RUN apk add --no-cache docker git py-pip
+RUN apk add --no-cache docker git py-pip openssh
 
 RUN pip install docker-compose
 
