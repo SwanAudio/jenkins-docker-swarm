@@ -20,7 +20,7 @@ ENV COMPOSE_VERSION 1.24.0
 
 RUN apk add --no-cache docker git openssh python3 python3-dev libffi-dev openssl-dev gcc libc-dev make
 
-RUN pip install --no-cache-dir docker-compose==${COMPOSE_VERSION}
+RUN pip3 install --no-cache-dir docker-compose==${COMPOSE_VERSION}
 
 # START: https://github.com/docker-library/openjdk/blob/2598f7123fce9ea870e67f8f9df745b2b49866c0/8-jre/alpine/Dockerfile
 ENV LANG C.UTF-8
