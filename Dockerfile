@@ -2,7 +2,7 @@
 # build to pull down the latest swarm client without needing the dependency.
 FROM alpine:latest
 
-ENV SWARM_CLIENT 3.8
+ENV SWARM_CLIENT 3.15
 
 WORKDIR /
 
@@ -35,8 +35,8 @@ RUN { \
 ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk/jre
 ENV PATH $PATH:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin
 
-ENV JAVA_VERSION 8u181
-ENV JAVA_ALPINE_VERSION 8.181.13-r0
+ENV JAVA_VERSION 8u201
+ENV JAVA_ALPINE_VERSION 8.201.08-r1
 
 RUN set -x \
 	&& apk add --no-cache \
