@@ -18,7 +18,7 @@ LABEL maintainer="evan@swanaudio.com"
 
 ENV COMPOSE_VERSION 1.24.0
 
-RUN apk add --no-cache docker git py-pip openssh
+RUN apk add --no-cache docker git openssh python3 python3-dev libffi-dev openssl-dev gcc libc-dev make
 
 RUN pip install --no-cache-dir docker-compose==${COMPOSE_VERSION}
 
